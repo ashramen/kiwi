@@ -16,9 +16,6 @@
 		7C9B9B4F273B133F0068A2C3 /* kiwiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B4E273B133F0068A2C3 /* kiwiTests.swift */; };
 		7C9B9B59273B133F0068A2C3 /* kiwiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B58273B133F0068A2C3 /* kiwiUITests.swift */; };
 		7C9B9B5B273B133F0068A2C3 /* kiwiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B5A273B133F0068A2C3 /* kiwiUITestsLaunchTests.swift */; };
-		7C9B9B68273B13710068A2C3 /* apple_music_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9B9B67273B13710068A2C3 /* apple_music_logo.png */; };
-		7C9B9B6A273B13790068A2C3 /* Color-Spotify-Logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */; };
-		7C9B9B6C273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */; };
 		7C9B9B6E273B144E0068A2C3 /* fromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,9 +50,6 @@
 		7C9B9B54273B133F0068A2C3 /* kiwiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kiwiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C9B9B58273B133F0068A2C3 /* kiwiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kiwiUITests.swift; sourceTree = "<group>"; };
 		7C9B9B5A273B133F0068A2C3 /* kiwiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kiwiUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7C9B9B67273B13710068A2C3 /* apple_music_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple_music_logo.png; path = ../../../../../apple_music_logo.png; sourceTree = "<group>"; };
-		7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Color-Spotify-Logo.jpeg"; path = "../../../../../Color-Spotify-Logo.jpeg"; sourceTree = "<group>"; };
-		7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2021-11-09 at 2.28.31 PM.png"; path = "../../../../../Screen Shot 2021-11-09 at 2.28.31 PM.png"; sourceTree = "<group>"; };
 		7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,9 +106,6 @@
 				7C9B9B3B273B133D0068A2C3 /* ViewController.swift */,
 				7C9B9B3D273B133D0068A2C3 /* Main.storyboard */,
 				7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */,
-				7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */,
-				7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */,
-				7C9B9B67273B13710068A2C3 /* apple_music_logo.png */,
 				7C9B9B40273B133F0068A2C3 /* Assets.xcassets */,
 				7C9B9B42273B133F0068A2C3 /* LaunchScreen.storyboard */,
 				7C9B9B45273B133F0068A2C3 /* Info.plist */,
@@ -243,12 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C9B9B6A273B13790068A2C3 /* Color-Spotify-Logo.jpeg in Resources */,
 				7C9B9B44273B133F0068A2C3 /* LaunchScreen.storyboard in Resources */,
-				7C9B9B68273B13710068A2C3 /* apple_music_logo.png in Resources */,
 				7C9B9B41273B133F0068A2C3 /* Assets.xcassets in Resources */,
 				7C9B9B3F273B133D0068A2C3 /* Main.storyboard in Resources */,
-				7C9B9B6C273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
