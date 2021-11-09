@@ -20,6 +20,7 @@
 		7C9B9B6A273B13790068A2C3 /* Color-Spotify-Logo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */; };
 		7C9B9B6C273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */; };
 		7C9B9B6E273B144E0068A2C3 /* fromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */; };
+		7C9B9B70273B15A50068A2C3 /* playlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9B9B6F273B15A50068A2C3 /* playlistViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Color-Spotify-Logo.jpeg"; path = "../../../../../Color-Spotify-Logo.jpeg"; sourceTree = "<group>"; };
 		7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screen Shot 2021-11-09 at 2.28.31 PM.png"; path = "../../../../../Screen Shot 2021-11-09 at 2.28.31 PM.png"; sourceTree = "<group>"; };
 		7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fromViewController.swift; sourceTree = "<group>"; };
+		7C9B9B6F273B15A50068A2C3 /* playlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playlistViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				7C9B9B39273B133D0068A2C3 /* SceneDelegate.swift */,
 				7C9B9B3B273B133D0068A2C3 /* ViewController.swift */,
 				7C9B9B3D273B133D0068A2C3 /* Main.storyboard */,
+				7C9B9B6F273B15A50068A2C3 /* playlistViewController.swift */,
 				7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */,
 				7C9B9B6B273B13830068A2C3 /* Screen Shot 2021-11-09 at 2.28.31 PM.png */,
 				7C9B9B69273B13790068A2C3 /* Color-Spotify-Logo.jpeg */,
@@ -277,6 +280,7 @@
 				7C9B9B38273B133D0068A2C3 /* AppDelegate.swift in Sources */,
 				7C9B9B6E273B144E0068A2C3 /* fromViewController.swift in Sources */,
 				7C9B9B3A273B133D0068A2C3 /* SceneDelegate.swift in Sources */,
+				7C9B9B70273B15A50068A2C3 /* playlistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
