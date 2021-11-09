@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "appleMusicLogo.jpeg",
+      "filename" : "appleMusicLogo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "appleMusicLogo@2x.jpeg",
+      "filename" : "appleMusicLogo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "appleMusicLogo@3x.jpeg",
+      "filename" : "appleMusicLogo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
