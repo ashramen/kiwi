@@ -80,6 +80,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F00CF8E273DD73C0047C09C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7C9B9B3B273B133D0068A2C3 /* ViewController.swift */,
+				7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */,
+				7C9B9B6F273B15A50068A2C3 /* playlistViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3F00CF8F273DD7970047C09C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C9B9B3D273B133D0068A2C3 /* Main.storyboard */,
+				7C9B9B42273B133F0068A2C3 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7C9B9B2B273B133C0068A2C3 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +124,9 @@
 			children = (
 				7C9B9B37273B133D0068A2C3 /* AppDelegate.swift */,
 				7C9B9B39273B133D0068A2C3 /* SceneDelegate.swift */,
-				7C9B9B3B273B133D0068A2C3 /* ViewController.swift */,
-				7C9B9B3D273B133D0068A2C3 /* Main.storyboard */,
-				7C9B9B6F273B15A50068A2C3 /* playlistViewController.swift */,
-				7C9B9B6D273B144E0068A2C3 /* fromViewController.swift */,
+				3F00CF8E273DD73C0047C09C /* Controllers */,
+				3F00CF8F273DD7970047C09C /* Views */,
 				7C9B9B40273B133F0068A2C3 /* Assets.xcassets */,
-				7C9B9B42273B133F0068A2C3 /* LaunchScreen.storyboard */,
 				7C9B9B45273B133F0068A2C3 /* Info.plist */,
 			);
 			path = kiwi;
