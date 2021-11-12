@@ -73,32 +73,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-u8-c2I">
-                                <rect key="frame" x="84" y="274" width="246" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="spotifyImage"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="V8W-hS-HL9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pca-fw-SgV">
-                                <rect key="frame" x="166" y="699" width="83" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Continue"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-5A-BUd">
-                                <rect key="frame" x="41" y="474" width="353" height="189"/>
+                                <rect key="frame" x="31" y="481" width="353" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
                                     <backgroundConfiguration key="background" image="AppleMusicImage"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="5lz-a6-6i1"/>
+                                    <segue destination="fFY-UF-idv" kind="show" identifier="choseApple" id="wDb-YL-6yg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-u8-c2I">
+                                <rect key="frame" x="74" y="249" width="267" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="spotifyImage"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="fFY-UF-idv" kind="show" identifier="choseSpotify" id="umB-kM-lF3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,15 +100,54 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZEy-tT-fCR"/>
-                    <connections>
-                        <outlet property="appleMusicChoose" destination="NEx-5A-BUd" id="PIM-Ts-LXy"/>
-                        <outlet property="continueBtn" destination="pca-fw-SgV" id="U5V-Y2-eO0"/>
-                        <outlet property="spotifyChoose" destination="BVa-u8-c2I" id="Ozg-FR-5vM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hl-xM-tsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1702.8985507246377" y="66.964285714285708"/>
+        </scene>
+        <!--Username View Controller-->
+        <scene sceneID="v3P-Le-MKN">
+            <objects>
+                <viewController id="fFY-UF-idv" customClass="usernameViewController" customModule="kiwi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GTn-HO-bAI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faV-5m-wXZ">
+                                <rect key="frame" x="67" y="209" width="280" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gYb-8C-f9U">
+                                <rect key="frame" x="145" y="391" width="125" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpF-qa-7Jl">
+                                <rect key="frame" x="166" y="682" width="83" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                                <connections>
+                                    <action selector="continue:" destination="fFY-UF-idv" eventType="touchUpInside" id="Rnd-U2-f1Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HLM-2f-hKC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VRG-p6-LDA"/>
+                    <connections>
+                        <outlet property="enterUsername" destination="faV-5m-wXZ" id="VJe-Cv-zfe"/>
+                        <outlet property="userTextField" destination="gYb-8C-f9U" id="dki-ZH-E1j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wec-Nm-T6O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2547.826086956522" y="66.964285714285708"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="hCI-11-Pxa">
@@ -144,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWb-Iv-yVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498.5507246376815" y="66.964285714285708"/>
+            <point key="canvasLocation" x="3407" y="67"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bAd-JR-qAF">
@@ -179,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g56-7d-x3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3326.0869565217395" y="66.964285714285708"/>
+            <point key="canvasLocation" x="4235" y="67"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="TQZ-cj-Urm">
@@ -217,7 +250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aah-oD-hJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4148" y="67"/>
+            <point key="canvasLocation" x="5057" y="67"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yqd-9f-Cm5">
@@ -238,6 +271,9 @@
             <point key="canvasLocation" x="18.840579710144929" y="66.964285714285708"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wDb-YL-6yg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="AppleMusicImage" width="240.5" height="115"/>
         <image name="logo" width="341" height="341"/>
