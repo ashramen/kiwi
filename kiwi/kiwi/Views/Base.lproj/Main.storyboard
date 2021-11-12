@@ -84,22 +84,22 @@
                                     <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="V8W-hS-HL9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-5A-BUd">
-                                <rect key="frame" x="61" y="460" width="293" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <backgroundConfiguration key="background" image="appleMusicImage"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="5lz-a6-6i1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pca-fw-SgV">
                                 <rect key="frame" x="166" y="699" width="83" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-5A-BUd">
+                                <rect key="frame" x="41" y="474" width="353" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="AppleMusicImage"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="5lz-a6-6i1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49p-He-x1g"/>
@@ -239,8 +239,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AppleMusicImage" width="853" height="213"/>
-        <image name="appleMusicImage" width="240.5" height="115"/>
+        <image name="AppleMusicImage" width="240.5" height="115"/>
         <image name="logo" width="341" height="341"/>
         <image name="spotifyImage" width="566" height="383"/>
         <systemColor name="systemBackgroundColor">
