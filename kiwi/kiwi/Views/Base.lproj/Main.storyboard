@@ -40,12 +40,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Du1-Jv-5Rq">
-                                <rect key="frame" x="178" y="706" width="60" height="31"/>
+                                <rect key="frame" x="138" y="673" width="128" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
-                                    <segue destination="Jro-s9-3Yy" kind="show" id="3Gx-5Z-uGK"/>
+                                    <segue destination="Jro-s9-3Yy" kind="show" id="qUh-qH-naE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,22 +73,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="spotifyImage" translatesAutoresizingMaskIntoConstraints="NO" id="v2B-zm-lUZ">
-                                <rect key="frame" x="99" y="248" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVa-u8-c2I">
+                                <rect key="frame" x="84" y="274" width="246" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appleMusicImage" translatesAutoresizingMaskIntoConstraints="NO" id="ewN-gb-8nk">
-                                <rect key="frame" x="99" y="453" width="240" height="128"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="spotifyImage"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="V8W-hS-HL9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEx-5A-BUd">
+                                <rect key="frame" x="61" y="460" width="293" height="189"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="appleMusicImage"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playlistChosen:" destination="Jro-s9-3Yy" eventType="touchUpInside" id="5lz-a6-6i1"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pca-fw-SgV">
-                                <rect key="frame" x="178" y="657" width="83" height="31"/>
+                                <rect key="frame" x="166" y="699" width="83" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Continue"/>
-                                <connections>
-                                    <segue destination="A0R-B4-0oi" kind="show" id="JxM-o2-SJJ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="49p-He-x1g"/>
@@ -96,14 +107,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZEy-tT-fCR"/>
                     <connections>
-                        <outlet property="appleMusicChoose" destination="ewN-gb-8nk" id="4w8-tb-HPJ"/>
-                        <outlet property="connectAccount" destination="pca-fw-SgV" id="fdh-aR-6LT"/>
-                        <outlet property="spotifyChoose" destination="v2B-zm-lUZ" id="5iY-dg-zvn"/>
+                        <outlet property="appleMusicChoose" destination="NEx-5A-BUd" id="PIM-Ts-LXy"/>
+                        <outlet property="continueBtn" destination="pca-fw-SgV" id="U5V-Y2-eO0"/>
+                        <outlet property="spotifyChoose" destination="BVa-u8-c2I" id="Ozg-FR-5vM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Hl-xM-tsO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="67"/>
+            <point key="canvasLocation" x="1702.8985507246377" y="66.964285714285708"/>
         </scene>
         <!--Playlist View Controller-->
         <scene sceneID="hCI-11-Pxa">
