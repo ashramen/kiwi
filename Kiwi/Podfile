@@ -1,8 +1,9 @@
-platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'Kiwi' do
   use_frameworks!
 
   # Pods for Kiwi
-
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 end

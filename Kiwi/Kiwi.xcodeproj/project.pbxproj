@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6822AB27446FE500912384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6822AA27446FE500912384 /* GoogleService-Info.plist */; };
 		3FBC873127443F16006BB059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873027443F16006BB059 /* AppDelegate.swift */; };
 		3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873227443F16006BB059 /* SceneDelegate.swift */; };
 		3FBC873527443F16006BB059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873427443F16006BB059 /* ViewController.swift */; };
@@ -17,9 +18,12 @@
 		3FBC874927445665006BB059 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874827445665006BB059 /* registerViewController.swift */; };
 		3FBC874B27445672006BB059 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874A27445672006BB059 /* loginViewController.swift */; };
 		3FBC874D274456A0006BB059 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874C274456A0006BB059 /* mainViewController.swift */; };
+		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F6822AA27446FE500912384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FBC872D27443F16006BB059 /* Kiwi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiwi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBC873027443F16006BB059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBC873227443F16006BB059 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +36,8 @@
 		3FBC874827445665006BB059 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		3FBC874A27445672006BB059 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		3FBC874C274456A0006BB059 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
+		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29740DDD6DD77BB775455ADD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3FBC872427443F16006BB059 = {
 			isa = PBXGroup;
 			children = (
 				3FBC872F27443F16006BB059 /* Kiwi */,
 				3FBC872E27443F16006BB059 /* Products */,
+				C1200F22CC85E6721D346104 /* Pods */,
+				29740DDD6DD77BB775455ADD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,7 @@
 				3FBC874427443FC4006BB059 /* Views */,
 				3FBC873927443F1B006BB059 /* Assets.xcassets */,
 				3FBC873E27443F1B006BB059 /* Info.plist */,
+				3F6822AA27446FE500912384 /* GoogleService-Info.plist */,
 			);
 			path = Kiwi;
 			sourceTree = "<group>";
@@ -95,6 +113,16 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		C1200F22CC85E6721D346104 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */,
+				48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +130,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3FBC874127443F1B006BB059 /* Build configuration list for PBXNativeTarget "Kiwi" */;
 			buildPhases = (
+				D8D6F83AE203533716051105 /* [CP] Check Pods Manifest.lock */,
 				3FBC872927443F16006BB059 /* Sources */,
 				3FBC872A27443F16006BB059 /* Frameworks */,
 				3FBC872B27443F16006BB059 /* Resources */,
+				2DA7C0C86C7A383F60136B32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,12 +184,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FBC873D27443F1B006BB059 /* LaunchScreen.storyboard in Resources */,
+				3F6822AB27446FE500912384 /* GoogleService-Info.plist in Resources */,
 				3FBC873A27443F1B006BB059 /* Assets.xcassets in Resources */,
 				3FBC873827443F16006BB059 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DA7C0C86C7A383F60136B32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8D6F83AE203533716051105 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kiwi-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3FBC872927443F16006BB059 /* Sources */ = {
@@ -316,6 +389,7 @@
 		};
 		3FBC874227443F1B006BB059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +418,7 @@
 		};
 		3FBC874327443F1B006BB059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
