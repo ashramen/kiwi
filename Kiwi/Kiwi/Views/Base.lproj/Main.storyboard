@@ -191,6 +191,7 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Register"/>
                                 <connections>
                                     <action selector="registerBtn:" destination="aVu-iM-226" eventType="touchUpInside" id="hw8-m2-bRA"/>
+                                    <segue destination="fIO-gn-M28" kind="show" identifier="registerToMain" id="2fx-CP-KSR"/>
                                 </connections>
                             </button>
                         </subviews>
