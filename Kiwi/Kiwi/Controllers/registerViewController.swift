@@ -22,7 +22,7 @@ class registerViewController: UIViewController {
         if let email = emailText.text, let password = passwordText.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let err = error {
-                    print(err)
+                    print(err.localizedDescription)
                 } else{
                     self.performSegue(withIdentifier: "registerToMain", sender: self)
                 }

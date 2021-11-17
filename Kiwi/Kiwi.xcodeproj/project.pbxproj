@@ -135,6 +135,7 @@
 				3FBC872A27443F16006BB059 /* Frameworks */,
 				3FBC872B27443F16006BB059 /* Resources */,
 				2DA7C0C86C7A383F60136B32 /* [CP] Embed Pods Frameworks */,
+				88EF708986D3341171027BE6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -208,6 +209,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88EF708986D3341171027BE6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kiwi/Pods-Kiwi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D8D6F83AE203533716051105 /* [CP] Check Pods Manifest.lock */ = {
