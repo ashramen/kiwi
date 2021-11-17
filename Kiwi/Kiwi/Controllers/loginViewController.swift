@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class loginViewController: UIViewController {
     @IBOutlet weak var emailBox: UITextField!
@@ -18,6 +19,15 @@ class loginViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
+        if let email = emailBox.text, let password = passwordBox.text {
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let err = error {
+                    print(err.localizedDescription)
+                } else{
+                    self.performSegue(withIdentifier: "loginToMain", sender: self)
+                }
+            }
+        }
     }
     
     /*
