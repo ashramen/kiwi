@@ -25,7 +25,7 @@ class registerViewController: UIViewController {
                 if let err = error {
                     print(err.localizedDescription)
                 } else {
-                    self.performSegue(withIdentifier: "registerToMain", sender: self)
+                    self.performSegue(withIdentifier: "registerToHome", sender: self)
                 }
                 
             }

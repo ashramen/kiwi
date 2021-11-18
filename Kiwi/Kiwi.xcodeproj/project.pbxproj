@@ -60,6 +60,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3FB3DD112746F28A00A49794 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3FBC872427443F16006BB059 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +91,7 @@
 			children = (
 				3FBC873027443F16006BB059 /* AppDelegate.swift */,
 				3FBC873227443F16006BB059 /* SceneDelegate.swift */,
+				3FB3DD112746F28A00A49794 /* Models */,
 				3FBC874527443FCE006BB059 /* Controllers */,
 				3FBC874427443FC4006BB059 /* Views */,
 				3FBC873927443F1B006BB059 /* Assets.xcassets */,
@@ -119,7 +128,6 @@
 				47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */,
 				48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

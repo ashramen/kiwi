@@ -24,7 +24,7 @@ class loginViewController: UIViewController {
                 if let err = error {
                     print(err.localizedDescription)
                 } else{
-                    self.performSegue(withIdentifier: "loginToMain", sender: self)
+                    self.performSegue(withIdentifier: "loginToHome", sender: self)
                 }
             }
         }

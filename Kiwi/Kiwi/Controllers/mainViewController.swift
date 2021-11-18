@@ -7,26 +7,30 @@
 
 import UIKit
 import Firebase
-class mainViewController: UIViewController {
 
+class mainViewController: UIViewController {
+    @IBOutlet weak var coinSearchText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Kiwi"
         navigationItem.hidesBackButton = true
         
         // Do any additional setup after loading the view.
     }
+    @IBAction func searchBtn(_ sender: UIButton) {
+        coinSearchText.text = ""
+    }
     
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        let firebaseAuth = Auth.auth()
-    do {
-      try firebaseAuth.signOut()
-        navigationController?.popToRootViewController(animated: true)
-    } catch let signOutError as NSError {
-      print("Error signing out: %@", signOutError)
-    }
-      
-    }
+//    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+//        let firebaseAuth = Auth.auth()
+//    do {
+//      try firebaseAuth.signOut()
+//        navigationController?.popToRootViewController(animated: true)
+//    } catch let signOutError as NSError {
+//      print("Error signing out: %@", signOutError)
+//    }
+//
+//    }
     
 
     /*
