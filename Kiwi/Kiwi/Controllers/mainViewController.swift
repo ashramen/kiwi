@@ -17,8 +17,12 @@ class mainViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    let coinAPI = CoinAPI()
     @IBAction func searchBtn(_ sender: UIButton) {
         coinSearchText.text = ""
+        let coinPrice = coinAPI.getCoinPrice(coin: "ETH", currency: "USD")
+
     }
     
 //    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {

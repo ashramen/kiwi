@@ -132,7 +132,6 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Login"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="T4b-Vo-XyC" eventType="touchUpInside" id="EQw-je-jAj"/>
-                                    <segue destination="jls-cP-20K" kind="show" identifier="loginToHome" id="uOx-3y-HXx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,6 +142,7 @@
                     <connections>
                         <outlet property="emailBox" destination="OYd-F1-08t" id="Kyf-rh-70r"/>
                         <outlet property="passwordBox" destination="6hf-o4-bJX" id="Tfj-X8-1X0"/>
+                        <segue destination="jls-cP-20K" kind="show" identifier="loginToHome" id="udj-0j-6du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ovh-79-zgF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -176,7 +176,6 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Register"/>
                                 <connections>
                                     <action selector="registerBtn:" destination="aVu-iM-226" eventType="touchUpInside" id="hw8-m2-bRA"/>
-                                    <segue destination="jls-cP-20K" kind="show" identifier="registerToHome" id="uru-15-yMb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -187,11 +186,12 @@
                     <connections>
                         <outlet property="emailText" destination="a7c-RF-bJZ" id="h6o-dg-zrK"/>
                         <outlet property="passwordText" destination="CYX-yg-uNd" id="Pge-Z4-Edn"/>
+                        <segue destination="jls-cP-20K" kind="show" identifier="registerToHome" id="Z6O-ja-UrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsg-eY-L5e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886.9565217391305" y="-216.29464285714286"/>
+            <point key="canvasLocation" x="1858" y="-216"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="03T-fd-sb8">
@@ -309,7 +309,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uOx-3y-HXx"/>
+        <segue reference="udj-0j-6du"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="386" height="382"/>
