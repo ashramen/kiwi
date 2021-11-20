@@ -27,7 +27,7 @@ class mainViewController: UIViewController {
     
     func loadUI() {
         let email = Auth.auth().currentUser?.email
-        db.collection("favCrypto").addSnapshotListener { querySnapshot, error in
+        db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
             if let e = error {
                 print("There was an error retrieving data: \(e)")
             } else{
@@ -57,7 +57,8 @@ class mainViewController: UIViewController {
             if coinName != ""{
                 db.collection("favCrypto").addDocument(data: [
                     "email": userEmail,
-                    "coin": coinName
+                    "coin": coinName,
+                    "date": Date().timeIntervalSince1970
                 ]) { error in
                     if let e = error {
                         print("Data was not successfully saved, error: \(e)")
