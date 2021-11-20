@@ -11,7 +11,7 @@ import Firebase
 class mainViewController: UIViewController {
     @IBOutlet weak var coinSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+    let db = Firestore.firestore()
     let cellIdentifier = "coinIdentifier"
     var coins: [Coin] = [
         Coin(name: "BTC", rate: "57384.21"),
@@ -21,15 +21,32 @@ class mainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        tableView.delegate = self
         tableView.dataSource = self
         navigationItem.hidesBackButton = true
-        
-        // Do any additional setup after loading the view.
+        loadUI()
+    }
+    
+    func loadUI() {
+        coins = []
+        db.collection()
     }
     
     let coinAPI = CoinAPI()
     @IBAction func searchBtn(_ sender: UIButton) {
-        let coinPrice = coinAPI.getCoinPrice(coin: coinSearchText.text ?? "BTC", currency: "USD")
+        if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
+            db.collection("favCrypto").addDocument(data: [
+                "email": userEmail,
+                "coin": coinName
+            ]) { error in
+                if let e = error {
+                    print("Data was not successfully saved, error: \(e)")
+                } else {
+                    print("Successfully saved data!")
+                }
+            }
+        }
+//        let coinPrice = coinAPI.getCoinPrice(coin: coinName ?? "BTC", currency: "USD")
         coinSearchText.text = ""
     }
     
@@ -68,3 +85,9 @@ extension mainViewController: UITableViewDataSource {
         return cell
     }
 }
+
+//extension mainViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
+//}
