@@ -264,6 +264,7 @@
                     <navigationItem key="navigationItem" id="vdU-s2-4T6"/>
                     <connections>
                         <outlet property="coinSearchText" destination="XvH-QX-37C" id="XbZ-wN-Mg5"/>
+                        <outlet property="tableView" destination="sFx-vD-iSE" id="Sjs-xB-wOp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBi-wd-tJu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

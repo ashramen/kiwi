@@ -20,6 +20,7 @@
 		3FBC874927445665006BB059 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874827445665006BB059 /* registerViewController.swift */; };
 		3FBC874B27445672006BB059 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874A27445672006BB059 /* loginViewController.swift */; };
 		3FBC874D274456A0006BB059 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874C274456A0006BB059 /* mainViewController.swift */; };
+		3FDFDB412749691E009251A7 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFDB402749691E009251A7 /* Coin.swift */; };
 		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		3FBC874827445665006BB059 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		3FBC874A27445672006BB059 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		3FBC874C274456A0006BB059 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		3FDFDB402749691E009251A7 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 			children = (
 				3FB3DD122746F32500A49794 /* CoinAPI.swift */,
 				3FB3DD142748425000A49794 /* CoinRates.swift */,
+				3FDFDB402749691E009251A7 /* Coin.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -279,6 +282,7 @@
 				3FBC874B27445672006BB059 /* loginViewController.swift in Sources */,
 				3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */,
 				3FBC874927445665006BB059 /* registerViewController.swift in Sources */,
+				3FDFDB412749691E009251A7 /* Coin.swift in Sources */,
 				3FBC874727445655006BB059 /* homeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
