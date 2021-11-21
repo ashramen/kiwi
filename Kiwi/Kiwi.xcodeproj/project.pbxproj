@@ -10,6 +10,7 @@
 		3F6822AB27446FE500912384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6822AA27446FE500912384 /* GoogleService-Info.plist */; };
 		3FB3DD132746F32500A49794 /* CoinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DD122746F32500A49794 /* CoinAPI.swift */; };
 		3FB3DD152748425000A49794 /* CoinRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DD142748425000A49794 /* CoinRates.swift */; };
+		3FB5A9E6274AF20B0013DED4 /* CoinAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB5A9E5274AF20B0013DED4 /* CoinAssets.swift */; };
 		3FBC873127443F16006BB059 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873027443F16006BB059 /* AppDelegate.swift */; };
 		3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873227443F16006BB059 /* SceneDelegate.swift */; };
 		3FBC873527443F16006BB059 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC873427443F16006BB059 /* ViewController.swift */; };
@@ -19,7 +20,7 @@
 		3FBC874727445655006BB059 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874627445655006BB059 /* homeViewController.swift */; };
 		3FBC874927445665006BB059 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874827445665006BB059 /* registerViewController.swift */; };
 		3FBC874B27445672006BB059 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874A27445672006BB059 /* loginViewController.swift */; };
-		3FBC874D274456A0006BB059 /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874C274456A0006BB059 /* mainViewController.swift */; };
+		3FBC874D274456A0006BB059 /* watchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874C274456A0006BB059 /* watchlistViewController.swift */; };
 		3FDFDB412749691E009251A7 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFDB402749691E009251A7 /* Coin.swift */; };
 		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		3F6822AA27446FE500912384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FB3DD122746F32500A49794 /* CoinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI.swift; sourceTree = "<group>"; };
 		3FB3DD142748425000A49794 /* CoinRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRates.swift; sourceTree = "<group>"; };
+		3FB5A9E5274AF20B0013DED4 /* CoinAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAssets.swift; sourceTree = "<group>"; };
 		3FBC872D27443F16006BB059 /* Kiwi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kiwi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FBC873027443F16006BB059 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FBC873227443F16006BB059 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +42,7 @@
 		3FBC874627445655006BB059 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		3FBC874827445665006BB059 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		3FBC874A27445672006BB059 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
-		3FBC874C274456A0006BB059 /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		3FBC874C274456A0006BB059 /* watchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchlistViewController.swift; sourceTree = "<group>"; };
 		3FDFDB402749691E009251A7 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +71,10 @@
 		3FB3DD112746F28A00A49794 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3FB3DD122746F32500A49794 /* CoinAPI.swift */,
-				3FB3DD142748425000A49794 /* CoinRates.swift */,
 				3FDFDB402749691E009251A7 /* Coin.swift */,
+				3FB3DD142748425000A49794 /* CoinRates.swift */,
+				3FB5A9E5274AF20B0013DED4 /* CoinAssets.swift */,
+				3FB3DD122746F32500A49794 /* CoinAPI.swift */,
 			);
 			name = Models;
 			path = ..;
@@ -126,7 +129,7 @@
 				3FBC874627445655006BB059 /* homeViewController.swift */,
 				3FBC874827445665006BB059 /* registerViewController.swift */,
 				3FBC874A27445672006BB059 /* loginViewController.swift */,
-				3FBC874C274456A0006BB059 /* mainViewController.swift */,
+				3FBC874C274456A0006BB059 /* watchlistViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,11 +280,12 @@
 				3FB3DD152748425000A49794 /* CoinRates.swift in Sources */,
 				3FBC873527443F16006BB059 /* ViewController.swift in Sources */,
 				3FBC873127443F16006BB059 /* AppDelegate.swift in Sources */,
-				3FBC874D274456A0006BB059 /* mainViewController.swift in Sources */,
+				3FBC874D274456A0006BB059 /* watchlistViewController.swift in Sources */,
 				3FB3DD132746F32500A49794 /* CoinAPI.swift in Sources */,
 				3FBC874B27445672006BB059 /* loginViewController.swift in Sources */,
 				3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */,
 				3FBC874927445665006BB059 /* registerViewController.swift in Sources */,
+				3FB5A9E6274AF20B0013DED4 /* CoinAssets.swift in Sources */,
 				3FDFDB412749691E009251A7 /* Coin.swift in Sources */,
 				3FBC874727445655006BB059 /* homeViewController.swift in Sources */,
 			);

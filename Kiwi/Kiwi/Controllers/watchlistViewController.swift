@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class mainViewController: UIViewController {
+class watchlistViewController: UIViewController {
     @IBOutlet weak var coinSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,7 +22,8 @@ class mainViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
-        loadUI()
+        coinAPI.getCoinAssets(coins: ["BTC","ETH"])
+//        loadUI()
     }
     
     func loadUI() {
@@ -87,7 +88,7 @@ class mainViewController: UIViewController {
     
 }
 
-extension mainViewController: UITableViewDataSource {
+extension watchlistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count
     }
