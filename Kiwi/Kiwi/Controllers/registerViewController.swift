@@ -12,10 +12,16 @@ class registerViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var registerBox: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        registerBox.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        registerBox.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        registerBox.layer.shadowOpacity = 1.0
+        registerBox.layer.shadowRadius = 0.0
+        registerBox.layer.masksToBounds = false
+        registerBox.layer.cornerRadius = 5
     }
     
     @IBAction func registerBtn(_ sender: UIButton) {

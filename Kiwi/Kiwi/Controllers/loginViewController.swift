@@ -11,11 +11,17 @@ import Firebase
 class loginViewController: UIViewController {
     @IBOutlet weak var emailBox: UITextField!
     @IBOutlet weak var passwordBox: UITextField!
+    @IBOutlet weak var loginBox: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        loginBox.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        loginBox.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
+        loginBox.layer.shadowOpacity = 1.0
+        loginBox.layer.shadowRadius = 0.0
+        loginBox.layer.masksToBounds = false
+        loginBox.layer.cornerRadius = 5
     }
     
     @IBAction func loginBtn(_ sender: Any) {
