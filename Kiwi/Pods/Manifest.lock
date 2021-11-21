@@ -46,13 +46,6 @@ PODS:
   - GoogleUtilities/Reachability (7.6.0):
     - GoogleUtilities/Logger
   - GTMSessionFetcher/Core (1.7.0)
-  - Material (3.1.8):
-    - Material/Core (= 3.1.8)
-  - Material/Core (3.1.8):
-    - Motion (~> 3.1.1)
-  - Motion (3.1.3):
-    - Motion/Core (= 3.1.3)
-  - Motion/Core (3.1.3)
   - nanopb (2.30908.0):
     - nanopb/decode (= 2.30908.0)
     - nanopb/encode (= 2.30908.0)
@@ -63,7 +56,6 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - FirebaseFirestore (from `https://github.com/invertase/firestore-ios-sdk-frameworks.git`, tag `8.9.0`)
-  - Material (~> 3.1.0)
 
 SPEC REPOS:
   trunk:
@@ -74,8 +66,6 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleUtilities
     - GTMSessionFetcher
-    - Material
-    - Motion
     - nanopb
     - PromisesObjC
 
@@ -98,11 +88,9 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 629c20a4d363167143f30ea78320d5a7eb8bd940
   GoogleUtilities: 684ee790a24f73ebb2d1d966e9711c203f2a4237
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
-  Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
-  Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: fe50ffe96bd0b49fa2d79cfd8da111d81edcceed
+PODFILE CHECKSUM: 0e0c52685a0ec5d2aa77547a86f994876720fc5c
 
 COCOAPODS: 1.11.2

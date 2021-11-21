@@ -7,8 +7,6 @@
 
 import Foundation
 
-//https://rest.coinapi.io/v1/exchangerate/BTC/USD
-
 struct CoinAPI {
     let baseURL = "https://rest.coinapi.io/v1/"
     let apiKey = "9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"

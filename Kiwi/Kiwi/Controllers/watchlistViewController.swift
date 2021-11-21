@@ -22,8 +22,7 @@ class watchlistViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
-        coinAPI.getCoinAssets(coins: ["BTC","ETH"])
-//        loadUI()
+        loadUI()
     }
     
     func loadUI() {

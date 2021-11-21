@@ -22,6 +22,8 @@
 		3FBC874B27445672006BB059 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874A27445672006BB059 /* loginViewController.swift */; };
 		3FBC874D274456A0006BB059 /* watchlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC874C274456A0006BB059 /* watchlistViewController.swift */; };
 		3FDFDB412749691E009251A7 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDFDB402749691E009251A7 /* Coin.swift */; };
+		3FF4F93B274B00B500FDA13C /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F93A274B00B500FDA13C /* mainViewController.swift */; };
+		3FF4F93D274B075200FDA13C /* friendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F93C274B075200FDA13C /* friendsViewController.swift */; };
 		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		3FBC874A27445672006BB059 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		3FBC874C274456A0006BB059 /* watchlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchlistViewController.swift; sourceTree = "<group>"; };
 		3FDFDB402749691E009251A7 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		3FF4F93A274B00B500FDA13C /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		3FF4F93C274B075200FDA13C /* friendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsViewController.swift; sourceTree = "<group>"; };
 		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +134,8 @@
 				3FBC874827445665006BB059 /* registerViewController.swift */,
 				3FBC874A27445672006BB059 /* loginViewController.swift */,
 				3FBC874C274456A0006BB059 /* watchlistViewController.swift */,
+				3FF4F93A274B00B500FDA13C /* mainViewController.swift */,
+				3FF4F93C274B075200FDA13C /* friendsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -282,7 +288,9 @@
 				3FBC873127443F16006BB059 /* AppDelegate.swift in Sources */,
 				3FBC874D274456A0006BB059 /* watchlistViewController.swift in Sources */,
 				3FB3DD132746F32500A49794 /* CoinAPI.swift in Sources */,
+				3FF4F93D274B075200FDA13C /* friendsViewController.swift in Sources */,
 				3FBC874B27445672006BB059 /* loginViewController.swift in Sources */,
+				3FF4F93B274B00B500FDA13C /* mainViewController.swift in Sources */,
 				3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */,
 				3FBC874927445665006BB059 /* registerViewController.swift in Sources */,
 				3FB5A9E6274AF20B0013DED4 /* CoinAssets.swift in Sources */,
