@@ -21,7 +21,7 @@ class mainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        navigationItem.hidesBackButton = true
+        self.tabBarController?.navigationItem.hidesBackButton = true
         loadUI()
     }
     
