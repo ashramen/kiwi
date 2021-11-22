@@ -72,7 +72,7 @@ struct CoinAPI {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(CoinAssets.self, from: data)
-            print(decodedData)
+            print(decodedData.count)
         } catch {
             print("error")
         }
