@@ -139,8 +139,8 @@
 				3FBC874627445655006BB059 /* homeViewController.swift */,
 				3FBC874827445665006BB059 /* registerViewController.swift */,
 				3FBC874A27445672006BB059 /* loginViewController.swift */,
-				3FBC874C274456A0006BB059 /* watchlistViewController.swift */,
 				3FF4F93A274B00B500FDA13C /* mainViewController.swift */,
+				3FBC874C274456A0006BB059 /* watchlistViewController.swift */,
 				3FF4F93C274B075200FDA13C /* friendsViewController.swift */,
 			);
 			path = Controllers;

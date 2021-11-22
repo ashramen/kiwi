@@ -14,6 +14,7 @@ class mainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Home"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")

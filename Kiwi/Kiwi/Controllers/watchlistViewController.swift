@@ -20,6 +20,7 @@ class watchlistViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Watchlist"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
         loadUI()
