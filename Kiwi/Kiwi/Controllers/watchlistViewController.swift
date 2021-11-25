@@ -23,6 +23,7 @@ class watchlistViewController: UIViewController {
         title = "Watchlist"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
+        tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         loadUI()
     }
     
@@ -94,8 +95,11 @@ extension watchlistViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = coins[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
+        cell.coinName.text = coins[indexPath.row].name
+        cell.coinPrice.text = "59k"
+        
+        
         return cell
     }
 }
