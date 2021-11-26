@@ -18,7 +18,8 @@ class mainViewController: UIViewController {
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
-//        coinAPI.getCoinAssets(coins: [])
+        let popularCoins = coinAPI.getPopularCoins(numOfPopCoins: 10)
+        //print(popularCoins)
     }
     
     

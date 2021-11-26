@@ -32,7 +32,8 @@ struct CoinAPI {
         return coinPriceStr
     }
     
-    func getCoinAssets(coins: [String]) {
+    func getCoinAssets(coins: [String]) -> CoinAssets {
+        var coinList: CoinAssets = []
         var filteredCoins: String = ""
         for coin in coins {
             filteredCoins += coin
@@ -48,13 +49,30 @@ struct CoinAPI {
                     print(error!)
                     return
                 }
+                else {
+                    
+                }
+                
                 if let safeData = data {
-                    self.parseCoinAssetsJSON(safeData)
+                    coinList = self.parseCoinAssetsJSON(safeData)
+                    print(coinList)
                 }
             }
             task.resume()
         }
-
+        //print(coinList)
+        return coinList
+    }
+    
+    func getPopularCoins(numOfPopCoins: Int) -> CoinAssets{
+        var sortedCoins: CoinAssets = self.getCoinAssets(coins: ["BTC", "ETH"])
+        
+        //sort the coinlist by the "volume_1day_usd" property
+        sortedCoins = sortedCoins.sorted(by: { $0.volume1DayUsd > $1.volume1DayUsd })
+        //print(sortedCoins)
+        
+        // Still need to figure out how to reduce the list of CoinAssets
+        return sortedCoins
     }
     
     func parseCoinRateJSON(_ data: Data) -> Double  {
@@ -68,13 +86,16 @@ struct CoinAPI {
         }
     }
     
-    func parseCoinAssetsJSON(_ data: Data)  {
+    func parseCoinAssetsJSON(_ data: Data)  -> CoinAssets{
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(CoinAssets.self, from: data)
-            print(decodedData.count)
-        } catch {
-            print("error")
+            let decodedData = try! decoder.decode(CoinAssets.self, from: data)
+            return decodedData
+            
+          // Disabled error propagation with try!
+//        } catch {
+//            print("error")
+//            return nil
         }
     }
 }
