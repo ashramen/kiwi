@@ -33,6 +33,7 @@ struct CoinAPI {
     }
     
     func getCoinAssets(coins: [String]) {
+        var allCoins: CoinAssets = []
         var filteredCoins: String = ""
         for coin in coins {
             filteredCoins += coin
@@ -49,12 +50,13 @@ struct CoinAPI {
                     return
                 }
                 if let safeData = data {
-                    self.parseCoinAssetsJSON(safeData)
+                    allCoins = self.parseCoinAssetsJSON(safeData)
+                    
                 }
             }
             task.resume()
         }
-
+        print(allCoins)
     }
     
     func parseCoinRateJSON(_ data: Data) -> Double  {
@@ -68,13 +70,12 @@ struct CoinAPI {
         }
     }
     
-    func parseCoinAssetsJSON(_ data: Data)  {
+    func parseCoinAssetsJSON(_ data: Data) -> CoinAssets {
         let decoder = JSONDecoder()
         do {
-            let decodedData = try decoder.decode(CoinAssets.self, from: data)
-            print(decodedData.count)
-        } catch {
-            print("error")
+            let decodedData = try! decoder.decode(CoinAssets.self, from: data)
+            print(decodedData)
+            return decodedData
         }
     }
 }
