@@ -33,7 +33,7 @@ struct CoinAPI {
     }
     
     func getCoinAssets(completionHandler: @escaping (CoinAssets) -> Void) {
-        let coins: [String] = []
+        let coins: [String] = ["BTC", "ETH", "DOGE"]
         var allCoins: CoinAssets = []
         var filteredCoins: String = ""
         for coin in coins {

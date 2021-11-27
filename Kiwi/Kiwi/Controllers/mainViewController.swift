@@ -11,6 +11,7 @@ class mainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let coinAPI = CoinAPI()
+    var Allcoins: CoinAssets = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,9 @@ class mainViewController: UIViewController {
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         // Load all the coins from the API
-        coinAPI.getCoinAssets() { (CoinAsset) in
-            print("All Coins Loaded")
+        coinAPI.getCoinAssets() { (CoinAssets) in
+            self.Allcoins = CoinAssets
+            print("Total Coins Loaded: ", self.Allcoins.count)
         }
     }
     
