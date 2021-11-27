@@ -32,7 +32,8 @@ struct CoinAPI {
         return coinPriceStr
     }
     
-    func getCoinAssets(coins: [String]) {
+    func getCoinAssets(completionHandler: @escaping (CoinAssets) -> Void) {
+        let coins: [String] = []
         var allCoins: CoinAssets = []
         var filteredCoins: String = ""
         for coin in coins {
@@ -44,19 +45,19 @@ struct CoinAPI {
         print(urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
                 if error != nil {
                     print(error!)
                     return
                 }
                 if let safeData = data {
                     allCoins = self.parseCoinAssetsJSON(safeData)
-                    
+                    completionHandler(allCoins)
                 }
-            }
+            })
             task.resume()
         }
-        print(allCoins)
+        
     }
     
     func parseCoinRateJSON(_ data: Data) -> Double  {
@@ -74,7 +75,7 @@ struct CoinAPI {
         let decoder = JSONDecoder()
         do {
             let decodedData = try! decoder.decode(CoinAssets.self, from: data)
-            print(decodedData)
+            //print(decodedData)
             return decodedData
         }
     }

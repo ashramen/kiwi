@@ -18,7 +18,10 @@ class mainViewController: UIViewController {
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
-        coinAPI.getCoinAssets(coins: ["BTC", "ETH", "DOGE"])
+        // Load all the coins from the API
+        coinAPI.getCoinAssets() { (CoinAsset) in
+            print("All Coins Loaded")
+        }
     }
     
     
