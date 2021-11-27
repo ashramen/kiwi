@@ -32,8 +32,9 @@ struct CoinAPI {
         return coinPriceStr
     }
     
+    // Returns all Coins from API call as a list of CoinAsset (sorted by volume1DayUsd)
     func getCoinAssets(completionHandler: @escaping (CoinAssets) -> Void) {
-        let coins: [String] = ["BTC", "ETH", "DOGE"]
+        let coins: [String] = []
         var allCoins: CoinAssets = []
         var filteredCoins: String = ""
         for coin in coins {
@@ -52,6 +53,7 @@ struct CoinAPI {
                 }
                 if let safeData = data {
                     allCoins = self.parseCoinAssetsJSON(safeData)
+                    allCoins = allCoins.sorted(by: { $0.volume1DayUsd > $1.volume1DayUsd })
                     completionHandler(allCoins)
                 }
             })
@@ -59,6 +61,7 @@ struct CoinAPI {
         }
         
     }
+    
     
     func parseCoinRateJSON(_ data: Data) -> Double  {
         let decoder = JSONDecoder()
