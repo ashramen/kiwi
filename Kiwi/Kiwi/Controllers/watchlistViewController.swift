@@ -92,7 +92,7 @@ class watchlistViewController: UIViewController {
 
         if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
             if self.coinMap[coinName]?.priceUsd != nil && coinNameList.contains(coinName) == false {
-                print(coinName, self.coinMap[coinName]?.priceUsd)
+                print(coinName, self.coinMap[coinName]?.priceUsd ?? 0.0)
                 if coinName != ""{
                     db.collection("favCrypto").addDocument(data: [
                         "email": userEmail,
@@ -160,7 +160,7 @@ extension watchlistViewController: UITableViewDataSource {
         cell.coinName.text = coins[indexPath.row].name_full
         cell.coinSymbol.text = coins[indexPath.row].name
         let price = Double(coins[indexPath.row].rate)
-        cell.coinPrice.text = String(format: "%.3f", price as! CVarArg)
+        cell.coinPrice.text = String(format: "%.3f", price!)
         
         return cell
     }
@@ -169,7 +169,7 @@ extension watchlistViewController: UITableViewDataSource {
         if editingStyle == .delete {
             // Delete the row from the data source
             //tableView.deleteRows(at: [indexPath], with: .fade)
-            let coinDelete = self.coins[indexPath.row].name
+            //let coinDelete = self.coins[indexPath.row].name
             self.coins.remove(at: indexPath.row)
 //            if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
 //            

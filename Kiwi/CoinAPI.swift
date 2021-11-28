@@ -9,7 +9,7 @@ import Foundation
 
 struct CoinAPI {
     let baseURL = "https://rest.coinapi.io/v1/"
-    let apiKey = "792B34AD-6ABB-44EA-8FA2-BD83DEAB80D4"
+    let apiKey = "B31F0065-E3B2-488E-958D-48D85F9EF566"
     
     /*Old API Key
     //"9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"*/
@@ -47,7 +47,7 @@ struct CoinAPI {
         }
         
         let urlString = "\(baseURL)assets/?filter_asset_id=\(filteredCoins)&apikey=\(apiKey)"
-        //print(urlString)
+        print(urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -81,7 +81,7 @@ struct CoinAPI {
                 }
                 if let safeData = data {
                     allCoinIcons = self.parseCoinIconsJSON(safeData)
-                    print(allCoinIcons)
+                    print(allCoinIcons[0])
                 }
             })
             task.resume()
