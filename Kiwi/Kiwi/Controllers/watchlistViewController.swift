@@ -77,6 +77,7 @@ class watchlistViewController: UIViewController {
                         }
                     }
                 }
+                
             }
         }
     }
@@ -162,5 +163,29 @@ extension watchlistViewController: UITableViewDataSource {
         cell.coinPrice.text = String(format: "%.3f", price as! CVarArg)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            let coinDelete = self.coins[indexPath.row].name
+            self.coins.remove(at: indexPath.row)
+//            if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
+//            
+//                db.collection("favCrypto").document(data: [
+//                    "email": userEmail,
+//                    "coin": coinDelete,
+//                ]).delete() { err in
+//                    if let err = err {
+//                        print("Error removing document: \(err)")
+//                    } else {
+//                        print("Document successfully removed!")
+//                    }
+//                }
+//            }
+            tableView.reloadData()
+            
+        }
     }
 }
