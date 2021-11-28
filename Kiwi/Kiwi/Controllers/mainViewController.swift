@@ -22,7 +22,7 @@ class mainViewController: UIViewController {
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         
-        // MARK: - Completion Handler
+        // MARK: - Completion Handler for Coin Info 
         // Load all the coins from the API and Define in AllCoins
         coinAPI.getCoinAssets() { (CoinAssets) in
             self.allCoins = CoinAssets
@@ -43,8 +43,14 @@ class mainViewController: UIViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        // MARK: - Completion Handler for Coin Info
+        // Load all the coins from the API and Define in AllCoins
+        //coinAPI.getCoinAssetIcons()
     }
 }
+
+
 
 // MARK: - Tableview
 extension mainViewController: UITableViewDataSource {
