@@ -9,7 +9,7 @@ import Foundation
 
 struct CoinAPI {
     let baseURL = "https://rest.coinapi.io/v1/"
-    let apiKey = "9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"
+    let apiKey = "7D8FC0DB-38E3-4903-8CB4-098514B1C4B2"
     
     func getCoinPrice(coin: String, currency: String) -> String {
         let urlString = "\(baseURL)exchangerate/\(coin)/\(currency)/?apikey=\(apiKey)"

@@ -10,4 +10,5 @@ import Foundation
 struct Coin {
     let name: String
     let rate: String
+    let name_full: String
 }

@@ -18,6 +18,9 @@ class watchlistViewController: UIViewController {
     
     var coins: [Coin] = []
     
+    var allCoins: CoinAssets = []
+    var coinMap: [String: CoinAsset] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Watchlist"
@@ -28,6 +31,21 @@ class watchlistViewController: UIViewController {
     }
     
     func loadUI() {
+        
+        coinAPI.getCoinAssets() { (CoinAssets) in
+            self.allCoins = CoinAssets
+            for coin in self.allCoins {
+                self.coinMap[coin.assetID] = coin
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        print("coins count 1... ", self.coins.count)
+        print("coinMap count... ", self.coinMap.count)
+        
         let email = Auth.auth().currentUser?.email
         db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
             if let e = error {
@@ -38,16 +56,27 @@ class watchlistViewController: UIViewController {
                     for doc in snapshotDocs{
                         let data = doc.data()
                         if data["email"] as? String == email{
-                            let coin = data["coin"] as? String
-                            let rate = self.coinAPI.getCoinPrice(coin: coin ?? "none", currency: "USD")
-                            let newCoin = Coin(name: coin ?? "none", rate: rate)
-                            self.coins.append(newCoin)
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
+                            let coin_name = data["coin"] as? String
+                            if self.coinMap.keys.contains(coin_name!) {
+                                let coinPrice = self.coinMap[coin_name ?? "none"]!.priceUsd
+                                let coinNameFull = self.coinMap[coin_name ?? "none"]!.name
+                                let newCoin = Coin(name: coin_name ?? "none", rate: String(coinPrice ?? 0), name_full: coinNameFull)
+                                self.coins.append(newCoin)
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
                             }
+                            
+//                            let rate = self.coinAPI.getCoinPrice(coin: coin ?? "none", currency: "USD")
+//                            let newCoin = Coin(name: coin ?? "none", rate: rate)
+//                            self.coins.append(newCoin)
+//                            DispatchQueue.main.async {
+//                                self.tableView.reloadData()
+//                            }
 
                         }
                     }
+                    print(self.coins)
                 }
             }
         }
@@ -68,6 +97,9 @@ class watchlistViewController: UIViewController {
                         print("Successfully saved data!")
                     }
                 }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
             
         }
@@ -96,9 +128,10 @@ extension watchlistViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
-        cell.coinName.text = coins[indexPath.row].name
-        cell.coinPrice.text = "59k"
-        
+        cell.coinName.text = coins[indexPath.row].name_full
+        cell.coinSymbol.text = coins[indexPath.row].name
+        let price = Double(coins[indexPath.row].rate)
+        cell.coinPrice.text = String(format: "%.3f", price as! CVarArg)
         
         return cell
     }
