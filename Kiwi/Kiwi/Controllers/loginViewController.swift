@@ -12,6 +12,7 @@ class loginViewController: UIViewController {
     @IBOutlet weak var emailBox: UITextField!
     @IBOutlet weak var passwordBox: UITextField!
     @IBOutlet weak var loginBox: UIButton!
+    let db = Firestore.firestore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,10 @@ class loginViewController: UIViewController {
                     self.performSegue(withIdentifier: "loginToHome", sender: self)
                 }
             }
+            
+            db.collection("registeredUsers").document(email).setData([
+                "email": email
+            ])
         }
     }
     

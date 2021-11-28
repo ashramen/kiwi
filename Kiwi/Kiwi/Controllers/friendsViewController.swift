@@ -40,6 +40,7 @@ class friendsViewController: UIViewController {
             }
             
         }
+        friendEmail.text = ""
     }}
 
 extension friendsViewController: UITableViewDataSource {
