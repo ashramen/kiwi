@@ -27,6 +27,7 @@
 		3FF4F942274B1B6900FDA13C /* coinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F940274B1B6900FDA13C /* coinTableViewCell.swift */; };
 		3FF4F943274B1B6900FDA13C /* coinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */; };
 		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
+		C3306AF12753464200304B2B /* CoinIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3306AF02753464200304B2B /* CoinIcons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = coinTableViewCell.xib; sourceTree = "<group>"; };
 		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
+		C3306AF02753464200304B2B /* CoinIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIcons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				3FDFDB402749691E009251A7 /* Coin.swift */,
 				3FB3DD142748425000A49794 /* CoinRates.swift */,
 				3FB5A9E5274AF20B0013DED4 /* CoinAssets.swift */,
+				C3306AF02753464200304B2B /* CoinIcons.swift */,
 				3FB3DD122746F32500A49794 /* CoinAPI.swift */,
 				3FF4F940274B1B6900FDA13C /* coinTableViewCell.swift */,
 				3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */,
@@ -300,6 +303,7 @@
 				3FBC874B27445672006BB059 /* loginViewController.swift in Sources */,
 				3FF4F93B274B00B500FDA13C /* mainViewController.swift in Sources */,
 				3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */,
+				C3306AF12753464200304B2B /* CoinIcons.swift in Sources */,
 				3FBC874927445665006BB059 /* registerViewController.swift in Sources */,
 				3FB5A9E6274AF20B0013DED4 /* CoinAssets.swift in Sources */,
 				3FDFDB412749691E009251A7 /* Coin.swift in Sources */,

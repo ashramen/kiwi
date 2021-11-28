@@ -9,7 +9,11 @@ import Foundation
 
 struct CoinAPI {
     let baseURL = "https://rest.coinapi.io/v1/"
-    let apiKey = "9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"
+    let baseURL2 = "http://rest-sandbox.coinapi.io/v1/"
+    let apiKey = "792B34AD-6ABB-44EA-8FA2-BD83DEAB80D4"
+    
+    /*Old API Key
+    //"9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"*/
     
     func getCoinPrice(coin: String, currency: String) -> String {
         let urlString = "\(baseURL)exchangerate/\(coin)/\(currency)/?apikey=\(apiKey)"
@@ -44,7 +48,7 @@ struct CoinAPI {
         }
         
         let urlString = "\(baseURL)assets/?filter_asset_id=\(filteredCoins)&apikey=\(apiKey)"
-        print(urlString)
+        //print(urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -61,6 +65,28 @@ struct CoinAPI {
             task.resume()
         }
         
+    }
+    
+    // MARK: - GetCoinAssetIcons()
+    func getCoinAssetIcons() {
+        var allCoinIcons: CoinIcons = []
+        let dimensions: String = "55"
+        let urlString = "\(baseURL)assets/icons/\(dimensions)/?apikey=\(apiKey)"
+        print(urlString)
+        if let url = URL(string: urlString) {
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
+                if error != nil {
+                    print(error!)
+                    return
+                }
+                if let safeData = data {
+                    allCoinIcons = self.parseCoinIconsJSON(safeData)
+                    print(allCoinIcons)
+                }
+            })
+            task.resume()
+        }
     }
     
     // MARK: - ParseCoinRateJSON
@@ -80,6 +106,16 @@ struct CoinAPI {
         let decoder = JSONDecoder()
         do {
             let decodedData = try! decoder.decode(CoinAssets.self, from: data)
+            //print(decodedData)
+            return decodedData
+        }
+    }
+    
+    // MARK: - ParseCoinIconsJSON
+    func parseCoinIconsJSON(_ data: Data) -> CoinIcons {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try! decoder.decode(CoinIcons.self, from: data)
             //print(decodedData)
             return decodedData
         }
