@@ -47,7 +47,7 @@ struct CoinAPI {
         }
         
         let urlString = "\(baseURL)assets/?filter_asset_id=\(filteredCoins)&apikey=\(apiKey)"
-        print(urlString)
+        print("getCoinAssets(): ", urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -67,11 +67,11 @@ struct CoinAPI {
     }
     
     // MARK: - GetCoinAssetIcons()
-    func getCoinAssetIcons() {
+    func getCoinAssetIcons(completionHandler: @escaping (CoinIcons) -> Void) {
         var allCoinIcons: CoinIcons = []
         let dimensions: String = "55"
         let urlString = "\(baseURL)assets/icons/\(dimensions)/?apikey=\(apiKey)"
-        print(urlString)
+        print("getCoinAssetIcons(): ", urlString)
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -81,7 +81,8 @@ struct CoinAPI {
                 }
                 if let safeData = data {
                     allCoinIcons = self.parseCoinIconsJSON(safeData)
-                    print(allCoinIcons[0])
+                    //print(allCoinIcons[0])
+                    completionHandler(allCoinIcons)
                 }
             })
             task.resume()

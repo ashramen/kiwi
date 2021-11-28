@@ -46,7 +46,9 @@ class mainViewController: UIViewController {
         
         // MARK: - Completion Handler for Coin Info
         // Load all the coins from the API and Define in AllCoins
-        coinAPI.getCoinAssetIcons()
+        coinAPI.getCoinAssetIcons() { (CoinIcons) in
+            print(CoinIcons[0])
+        }
     }
 }
 
