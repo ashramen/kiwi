@@ -76,7 +76,6 @@ class watchlistViewController: UIViewController {
 
                         }
                     }
-                    print(self.coins)
                 }
             }
         }
@@ -84,22 +83,51 @@ class watchlistViewController: UIViewController {
     
     
     @IBAction func searchBtn(_ sender: UIButton) {
+        
+        var coinNameList: [String] = []
+        for coin in self.coins {
+            coinNameList.append(coin.name)
+        }
+
         if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
-            if coinName != ""{
-                db.collection("favCrypto").addDocument(data: [
-                    "email": userEmail,
-                    "coin": coinName,
-                    "date": Date().timeIntervalSince1970
-                ]) { error in
-                    if let e = error {
-                        print("Data was not successfully saved, error: \(e)")
-                    } else {
-                        print("Successfully saved data!")
+            if self.coinMap[coinName]?.priceUsd != nil && coinNameList.contains(coinName) == false {
+                print(coinName, self.coinMap[coinName]?.priceUsd)
+                if coinName != ""{
+                    db.collection("favCrypto").addDocument(data: [
+                        "email": userEmail,
+                        "coin": coinName,
+                        "date": Date().timeIntervalSince1970
+                    ]) { error in
+                        if let e = error {
+                            print("Data was not successfully saved, error: \(e)")
+                        } else {
+                            print("Successfully saved data!")
+                        }
                     }
                 }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+            else if coinNameList.contains(coinName) == true {
+                let alertController = UIAlertController(title: "Alert", message: "You have already saved this cryptocurrency!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                    // Code in this block will trigger when OK button tapped.
+                    print("Ok button tapped");
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                let alertController = UIAlertController(title: "Alert", message: "This is not a real cryptocurrency!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                    // Code in this block will trigger when OK button tapped.
+                    print("Ok button tapped");
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
             }
             
         }
