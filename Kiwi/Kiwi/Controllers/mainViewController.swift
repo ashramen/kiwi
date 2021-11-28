@@ -14,7 +14,7 @@ class mainViewController: UIViewController {
     var allCoins: CoinAssets = []
     var popCoins: CoinAssets = []
     
-    
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Home"
@@ -22,6 +22,7 @@ class mainViewController: UIViewController {
         self.tabBarController?.navigationItem.hidesBackButton = true
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         
+        // MARK: - Completion Handler
         // Load all the coins from the API and Define in AllCoins
         coinAPI.getCoinAssets() { (CoinAssets) in
             self.allCoins = CoinAssets
@@ -41,17 +42,11 @@ class mainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-
         }
-        
-        
-        
-        
     }
-    
-    
 }
 
+// MARK: - Tableview
 extension mainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return popCoins.count
@@ -62,8 +57,7 @@ extension mainViewController: UITableViewDataSource {
 
         cell.coinName.text = popCoins[indexPath.row].name
         cell.coinSymbol.text = popCoins[indexPath.row].assetID
-
-        //cell.coinPrice.text = String(price)
+        cell.coinPrice.text = String(format: "%.3f", popCoins[indexPath.row].priceUsd ?? 0)
         //cell.coinPrice.text = String(price)
         
         

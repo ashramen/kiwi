@@ -32,6 +32,7 @@ struct CoinAPI {
         return coinPriceStr
     }
     
+    // MARK: - GetCoinAssets()
     // Returns all Coins from API call as a list of CoinAsset (sorted by volume1DayUsd)
     func getCoinAssets(completionHandler: @escaping (CoinAssets) -> Void) {
         let coins: [String] = []
@@ -62,7 +63,7 @@ struct CoinAPI {
         
     }
     
-    
+    // MARK: - ParseCoinRateJSON
     func parseCoinRateJSON(_ data: Data) -> Double  {
         let decoder = JSONDecoder()
         do {
@@ -74,6 +75,7 @@ struct CoinAPI {
         }
     }
     
+    // MARK: - ParseCoinAssetsJSON
     func parseCoinAssetsJSON(_ data: Data) -> CoinAssets {
         let decoder = JSONDecoder()
         do {
