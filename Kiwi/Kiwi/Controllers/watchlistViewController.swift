@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 
+// MARK: - UIViewController Class
 class watchlistViewController: UIViewController {
     @IBOutlet weak var coinSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -21,6 +22,7 @@ class watchlistViewController: UIViewController {
     var allCoins: CoinAssets = []
     var coinMap: [String: CoinAsset] = [:]
     
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Watchlist"
@@ -30,6 +32,7 @@ class watchlistViewController: UIViewController {
         loadUI()
     }
     
+    // MARK: - LoadUI
     func loadUI() {
         
         coinAPI.getCoinAssets() { (CoinAssets) in
@@ -38,51 +41,38 @@ class watchlistViewController: UIViewController {
                 self.coinMap[coin.assetID] = coin
             }
             
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-
-        print("coins count 1... ", self.coins.count)
-        print("coinMap count... ", self.coinMap.count)
-        
-        let email = Auth.auth().currentUser?.email
-        db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
-            if let e = error {
-                print("There was an error retrieving data: \(e)")
-            } else{
-                self.coins = []
-                if let snapshotDocs = querySnapshot?.documents {
-                    for doc in snapshotDocs{
-                        let data = doc.data()
-                        if data["email"] as? String == email{
-                            let coin_name = data["coin"] as? String
-                            if self.coinMap.keys.contains(coin_name!) {
-                                let coinPrice = self.coinMap[coin_name ?? "none"]!.priceUsd
-                                let coinNameFull = self.coinMap[coin_name ?? "none"]!.name
-                                let newCoin = Coin(name: coin_name ?? "none", rate: String(coinPrice ?? 0), name_full: coinNameFull)
-                                self.coins.append(newCoin)
-                                DispatchQueue.main.async {
-                                    self.tableView.reloadData()
+            // Test Print that coins have been generated and added to Map
+            //print("coinMap count... ", self.coinMap.count)
+            
+            let email = Auth.auth().currentUser?.email
+            self.db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
+                if let e = error {
+                    print("There was an error retrieving data: \(e)")
+                } else{
+                    self.coins = []
+                    if let snapshotDocs = querySnapshot?.documents {
+                        for doc in snapshotDocs{
+                            let data = doc.data()
+                            if data["email"] as? String == email{
+                                let coin_name = data["coin"] as? String
+                                if self.coinMap.keys.contains(coin_name!) {
+                                    let coinPrice = self.coinMap[coin_name ?? "none"]!.priceUsd
+                                    let coinNameFull = self.coinMap[coin_name ?? "none"]!.name
+                                    let newCoin = Coin(name: coin_name ?? "none", rate: String(coinPrice ?? 0), name_full: coinNameFull)
+                                    self.coins.append(newCoin)
+                                    DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                    }
                                 }
                             }
-                            
-//                            let rate = self.coinAPI.getCoinPrice(coin: coin ?? "none", currency: "USD")
-//                            let newCoin = Coin(name: coin ?? "none", rate: rate)
-//                            self.coins.append(newCoin)
-//                            DispatchQueue.main.async {
-//                                self.tableView.reloadData()
-//                            }
-
                         }
                     }
                 }
-                
             }
         }
     }
     
-    
+    // MARK: - SearchBtn
     @IBAction func searchBtn(_ sender: UIButton) {
         
         var coinNameList: [String] = []
@@ -105,9 +95,6 @@ class watchlistViewController: UIViewController {
                             print("Successfully saved data!")
                         }
                     }
-                }
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
                 }
             }
             else if coinNameList.contains(coinName) == true {
@@ -150,6 +137,7 @@ class watchlistViewController: UIViewController {
     
 }
 
+// MARK: - TableView Controller
 extension watchlistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count
@@ -165,6 +153,7 @@ extension watchlistViewController: UITableViewDataSource {
         return cell
     }
     
+    // MARK: - Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
