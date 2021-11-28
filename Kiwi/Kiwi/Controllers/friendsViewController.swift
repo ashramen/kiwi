@@ -8,11 +8,17 @@
 import UIKit
 
 class friendsViewController: UIViewController {
-
+    
+    @IBOutlet weak var cardTableView: UITableView!
+    
+    var friends: [Friend] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Friends"
         self.tabBarController?.navigationItem.hidesBackButton = true
+        cardTableView.dataSource = self
+        
         // Do any additional setup after loading the view.
     }
     
@@ -27,4 +33,19 @@ class friendsViewController: UIViewController {
     }
     */
 
+}
+
+extension friendsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = cardTableView.dequeueReusableCell(withIdentifier: "friendCellIdentifier") as! friendTableViewCell
+        cell.friendEmail.text = "ash@gmail.com"
+        cell.friendCoins.text = "ETH, BTC"
+        return cell
+    }
+    
+    
 }
