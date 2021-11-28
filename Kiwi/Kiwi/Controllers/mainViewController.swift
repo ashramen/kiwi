@@ -41,12 +41,7 @@ class mainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-            
-        /* Test to see that the coins were loaded in descending order (volume1DayUsd)
-        for n in 0...40 {
-            print(self.allCoins[n].assetID, " - volume1DayUsd: ", self.allCoins[n].volume1DayUsd)
-        }*/
+
         }
         
         
@@ -64,9 +59,6 @@ extension mainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
-        //let price = allCoins[indexPath.row].priceUsd!
-        print("PopCoins Tableview: ", popCoins[indexPath.row].assetID)
-        print("PopCoins Tableview: ", popCoins[indexPath.row])
 
         cell.coinName.text = popCoins[indexPath.row].name
         cell.coinSymbol.text = popCoins[indexPath.row].assetID
