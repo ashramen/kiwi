@@ -12,16 +12,16 @@ import Firebase
 class watchlistViewController: UIViewController {
     @IBOutlet weak var coinSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+
     let db = Firestore.firestore()
     let cellIdentifier = "coinIdentifier"
     let coinAPI = CoinAPI()
-    
+
     var coins: [Coin] = []
-    
+
     var allCoins: CoinAssets = []
     var coinMap: [String: CoinAsset] = [:]
-    
+
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +31,19 @@ class watchlistViewController: UIViewController {
         tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         loadUI()
     }
-    
+
     // MARK: - LoadUI
     func loadUI() {
-        
+
         coinAPI.getCoinAssets() { (CoinAssets) in
             self.allCoins = CoinAssets
             for coin in self.allCoins {
                 self.coinMap[coin.assetID] = coin
             }
-            
+
             // Test Print that coins have been generated and added to Map
             //print("coinMap count... ", self.coinMap.count)
-            
+
             let email = Auth.auth().currentUser?.email
             self.db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
                 if let e = error {
@@ -71,10 +71,10 @@ class watchlistViewController: UIViewController {
             }
         }
     }
-    
+
     // MARK: - SearchBtn
     @IBAction func searchBtn(_ sender: UIButton) {
-        
+
         var coinNameList: [String] = []
         for coin in self.coins {
             coinNameList.append(coin.name)
@@ -109,15 +109,15 @@ class watchlistViewController: UIViewController {
                 alertController.addAction(OKAction)
                 self.present(alertController, animated: true, completion: nil)
             }
-            
+
         }
 
         coinSearchText.text = ""
     }
-    
 
-    
-    
+
+
+
 }
 
 // MARK: - TableView Controller
@@ -125,17 +125,17 @@ extension watchlistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
         cell.coinName.text = coins[indexPath.row].name_full
         cell.coinSymbol.text = coins[indexPath.row].name
         let price = Double(coins[indexPath.row].rate)
         cell.coinPrice.text = String(format: "%.3f", price!)
-        
+
         return cell
     }
-    
+
     // MARK: - Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -150,7 +150,7 @@ extension watchlistViewController: UITableViewDataSource {
             }
 
             tableView.reloadData()
-            
+
         }
     }
 }

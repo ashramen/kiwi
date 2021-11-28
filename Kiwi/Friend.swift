@@ -10,5 +10,6 @@ import Foundation
 
 struct Friend {
     let email: String
+    let nickname: String
     let favCoins: [String]
 }

@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class friendsViewController: UIViewController {
     
     @IBOutlet weak var cardTableView: UITableView!
+    @IBOutlet weak var friendEmail: UITextField!
     
+    let db = Firestore.firestore()
     var friends: [Friend] = []
     
     override func viewDidLoad() {
@@ -18,22 +21,26 @@ class friendsViewController: UIViewController {
         title = "Friends"
         self.tabBarController?.navigationItem.hidesBackButton = true
         cardTableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+    @IBAction func friendAdded(_ sender: UIButton) {
+        if let friendMail = friendEmail.text, let userEmail = Auth.auth().currentUser?.email {
+            if friendMail != "" {
+                db.collection("friends").document(userEmail).setData([
+                    "friendEmail": friendMail
+                ])
+            }
+            else {
+                let alertController = UIAlertController(title: "Alert", message: "Please enter a friend's email address!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+        }
+    }}
 
 extension friendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +51,7 @@ extension friendsViewController: UITableViewDataSource {
         let cell = cardTableView.dequeueReusableCell(withIdentifier: "friendCellIdentifier") as! friendTableViewCell
         cell.friendEmail.text = "ash@gmail.com"
         cell.friendCoins.text = "ETH, BTC"
+        cell.configure()
         return cell
     }
     
