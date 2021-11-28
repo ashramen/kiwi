@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F220FB927540CE8005CE8F6 /* tabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F220FB827540CE8005CE8F6 /* tabViewController.swift */; };
 		3F6822AB27446FE500912384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6822AA27446FE500912384 /* GoogleService-Info.plist */; };
 		3FB3DD132746F32500A49794 /* CoinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DD122746F32500A49794 /* CoinAPI.swift */; };
 		3FB3DD152748425000A49794 /* CoinRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3DD142748425000A49794 /* CoinRates.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kiwi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F220FB827540CE8005CE8F6 /* tabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabViewController.swift; sourceTree = "<group>"; };
 		3F6822AA27446FE500912384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3FB3DD122746F32500A49794 /* CoinAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAPI.swift; sourceTree = "<group>"; };
 		3FB3DD142748425000A49794 /* CoinRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRates.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				3FF4F93A274B00B500FDA13C /* mainViewController.swift */,
 				3FBC874C274456A0006BB059 /* watchlistViewController.swift */,
 				3FF4F93C274B075200FDA13C /* friendsViewController.swift */,
+				3F220FB827540CE8005CE8F6 /* tabViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				3FB3DD132746F32500A49794 /* CoinAPI.swift in Sources */,
 				3FF4F93D274B075200FDA13C /* friendsViewController.swift in Sources */,
 				3FBC874B27445672006BB059 /* loginViewController.swift in Sources */,
+				3F220FB927540CE8005CE8F6 /* tabViewController.swift in Sources */,
 				3FF4F93B274B00B500FDA13C /* mainViewController.swift in Sources */,
 				3FBC873327443F16006BB059 /* SceneDelegate.swift in Sources */,
 				C3306AF12753464200304B2B /* CoinIcons.swift in Sources */,
