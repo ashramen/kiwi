@@ -24,7 +24,7 @@ class mainViewController: UIViewController {
         
         // MARK: - Completion Handler for Coin Info 
         // Load all the coins from the API and Define in AllCoins
-        /*coinAPI.getCoinAssets() { (CoinAssets) in
+        coinAPI.getCoinAssets() { (CoinAssets) in
             self.allCoins = CoinAssets
             
             var count: Int = 0
@@ -37,18 +37,18 @@ class mainViewController: UIViewController {
             }
             print("Total Coins Loaded: ", self.allCoins.count)
             print("Total Popular Coins : ", self.popCoins.count)
-            //print(self.popCoins[0], "\n")
+            print(self.popCoins[0], "\n")
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }*/
+        }
         
         // MARK: - Completion Handler for Coin Info
         // Load all the coins from the API and Define in AllCoins
-        coinAPI.getCoinAssetIcons() { (CoinIcons) in
-            print(CoinIcons[0])
-        }
+//        coinAPI.getCoinAssetIcons() { (CoinIcons) in
+//            print(CoinIcons[0])
+//        }
     }
 }
 

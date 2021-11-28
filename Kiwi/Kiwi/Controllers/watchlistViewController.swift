@@ -84,19 +84,11 @@ class watchlistViewController: UIViewController {
             if self.coinMap[coinName]?.priceUsd != nil && coinNameList.contains(coinName) == false {
                 print(coinName, self.coinMap[coinName]?.priceUsd ?? 0.0)
                 if coinName != ""{
-                    db.collection("favCrypto").addDocument(data: [
+                    db.collection("favCrypto").document(coinName).setData([
                         "email": userEmail,
                         "coin": coinName,
-                        "date": Date().timeIntervalSince1970
-                    ]) { error in
-                        if let e = error {
-                            print("Data was not successfully saved, error: \(e)")
-                        } else {
-                            print("Successfully saved data!")
-                        }
-                    }
-                }
-            }
+                        "date": Date().timeIntervalSince1970])
+                } }
             else if coinNameList.contains(coinName) == true {
                 let alertController = UIAlertController(title: "Alert", message: "You have already saved this cryptocurrency!", preferredStyle: .alert)
                 let OKAction = UIAlertAction(title: "OK", style: .default) {
@@ -119,7 +111,7 @@ class watchlistViewController: UIViewController {
             }
             
         }
-        //        let coinPrice = coinAPI.getCoinPrice(coin: coinName ?? "BTC", currency: "USD")
+
         coinSearchText.text = ""
     }
     
@@ -147,23 +139,16 @@ extension watchlistViewController: UITableViewDataSource {
     // MARK: - Delete
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            //tableView.deleteRows(at: [indexPath], with: .fade)
-            //let coinDelete = self.coins[indexPath.row].name
+            let coinDelete = self.coins[indexPath.row].name
             self.coins.remove(at: indexPath.row)
-//            if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
-//            
-//                db.collection("favCrypto").document(data: [
-//                    "email": userEmail,
-//                    "coin": coinDelete,
-//                ]).delete() { err in
-//                    if let err = err {
-//                        print("Error removing document: \(err)")
-//                    } else {
-//                        print("Document successfully removed!")
-//                    }
-//                }
-//            }
+            db.collection("favCrypto").document(coinDelete).delete() { err in
+                if let err = err {
+                    print("Error removing document: \(err)")
+                } else {
+                    print("Document successfully removed!")
+                }
+            }
+
             tableView.reloadData()
             
         }
