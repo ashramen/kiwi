@@ -18,6 +18,9 @@ class watchlistViewController: UIViewController {
     
     var coins: [Coin] = []
     
+    var allCoins: CoinAssets = []
+    var coinMap: [String: CoinAsset] = [:]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Watchlist"
@@ -28,6 +31,21 @@ class watchlistViewController: UIViewController {
     }
     
     func loadUI() {
+        
+        coinAPI.getCoinAssets() { (CoinAssets) in
+            self.allCoins = CoinAssets
+            for coin in self.allCoins {
+                self.coinMap[coin.assetID] = coin
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        print("coins count 1... ", self.coins.count)
+        print("coinMap count... ", self.coinMap.count)
+        
         let email = Auth.auth().currentUser?.email
         db.collection("favCrypto").order(by: "coin").addSnapshotListener { querySnapshot, error in
             if let e = error {
@@ -38,36 +56,79 @@ class watchlistViewController: UIViewController {
                     for doc in snapshotDocs{
                         let data = doc.data()
                         if data["email"] as? String == email{
-                            let coin = data["coin"] as? String
-                            let rate = self.coinAPI.getCoinPrice(coin: coin ?? "none", currency: "USD")
-                            let newCoin = Coin(name: coin ?? "none", rate: rate)
-                            self.coins.append(newCoin)
-                            DispatchQueue.main.async {
-                                self.tableView.reloadData()
+                            let coin_name = data["coin"] as? String
+                            if self.coinMap.keys.contains(coin_name!) {
+                                let coinPrice = self.coinMap[coin_name ?? "none"]!.priceUsd
+                                let coinNameFull = self.coinMap[coin_name ?? "none"]!.name
+                                let newCoin = Coin(name: coin_name ?? "none", rate: String(coinPrice ?? 0), name_full: coinNameFull)
+                                self.coins.append(newCoin)
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
                             }
+                            
+//                            let rate = self.coinAPI.getCoinPrice(coin: coin ?? "none", currency: "USD")
+//                            let newCoin = Coin(name: coin ?? "none", rate: rate)
+//                            self.coins.append(newCoin)
+//                            DispatchQueue.main.async {
+//                                self.tableView.reloadData()
+//                            }
 
                         }
                     }
                 }
+                
             }
         }
     }
     
     
     @IBAction func searchBtn(_ sender: UIButton) {
+        
+        var coinNameList: [String] = []
+        for coin in self.coins {
+            coinNameList.append(coin.name)
+        }
+
         if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
-            if coinName != ""{
-                db.collection("favCrypto").addDocument(data: [
-                    "email": userEmail,
-                    "coin": coinName,
-                    "date": Date().timeIntervalSince1970
-                ]) { error in
-                    if let e = error {
-                        print("Data was not successfully saved, error: \(e)")
-                    } else {
-                        print("Successfully saved data!")
+            if self.coinMap[coinName]?.priceUsd != nil && coinNameList.contains(coinName) == false {
+                print(coinName, self.coinMap[coinName]?.priceUsd)
+                if coinName != ""{
+                    db.collection("favCrypto").addDocument(data: [
+                        "email": userEmail,
+                        "coin": coinName,
+                        "date": Date().timeIntervalSince1970
+                    ]) { error in
+                        if let e = error {
+                            print("Data was not successfully saved, error: \(e)")
+                        } else {
+                            print("Successfully saved data!")
+                        }
                     }
                 }
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            else if coinNameList.contains(coinName) == true {
+                let alertController = UIAlertController(title: "Alert", message: "You have already saved this cryptocurrency!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                    // Code in this block will trigger when OK button tapped.
+                    print("Ok button tapped");
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
+            }
+            else {
+                let alertController = UIAlertController(title: "Alert", message: "This is not a real cryptocurrency!", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "OK", style: .default) {
+                    (action: UIAlertAction!) in
+                    // Code in this block will trigger when OK button tapped.
+                    print("Ok button tapped");
+                }
+                alertController.addAction(OKAction)
+                self.present(alertController, animated: true, completion: nil)
             }
             
         }
@@ -96,10 +157,35 @@ extension watchlistViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
-        cell.coinName.text = coins[indexPath.row].name
-        cell.coinPrice.text = "59k"
-        
+        cell.coinName.text = coins[indexPath.row].name_full
+        cell.coinSymbol.text = coins[indexPath.row].name
+        let price = Double(coins[indexPath.row].rate)
+        cell.coinPrice.text = String(format: "%.3f", price as! CVarArg)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            let coinDelete = self.coins[indexPath.row].name
+            self.coins.remove(at: indexPath.row)
+//            if let coinName = coinSearchText.text, let userEmail = Auth.auth().currentUser?.email {
+//            
+//                db.collection("favCrypto").document(data: [
+//                    "email": userEmail,
+//                    "coin": coinDelete,
+//                ]).delete() { err in
+//                    if let err = err {
+//                        print("Error removing document: \(err)")
+//                    } else {
+//                        print("Document successfully removed!")
+//                    }
+//                }
+//            }
+            tableView.reloadData()
+            
+        }
     }
 }
