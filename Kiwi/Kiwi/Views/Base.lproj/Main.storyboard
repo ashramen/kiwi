@@ -367,7 +367,7 @@
                             <constraint firstItem="CSH-A3-j3F" firstAttribute="leading" secondItem="FQF-mr-AiN" secondAttribute="leading" constant="20" id="qjC-Qn-RkC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" id="2gc-3K-vZE"/>
+                    <tabBarItem key="tabBarItem" title="Friends" selectedImage="person.2.fill" catalog="system" id="2gc-3K-vZE"/>
                     <connections>
                         <outlet property="cardTableView" destination="zaU-zw-hwe" id="gdm-ZL-581"/>
                         <outlet property="friendEmail" destination="glM-fp-qdM" id="CKW-qs-S9u"/>
@@ -481,7 +481,7 @@
                             <constraint firstItem="a02-o3-4hm" firstAttribute="trailing" secondItem="dqs-8h-Un8" secondAttribute="trailing" id="wlg-WJ-bZt"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="1R2-Vh-fVT"/>
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="homekit" catalog="system" id="1R2-Vh-fVT"/>
                     <connections>
                         <outlet property="tableView" destination="dqs-8h-Un8" id="O7H-1Q-KQR"/>
                     </connections>
@@ -614,7 +614,7 @@
                             <constraint firstItem="jvN-th-yAV" firstAttribute="bottom" secondItem="CPt-je-E8E" secondAttribute="bottom" id="x6K-BB-van"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Watchlist" id="A7A-4Y-5mE"/>
+                    <tabBarItem key="tabBarItem" title="Watchlist" selectedImage="list.dash" catalog="system" id="A7A-4Y-5mE"/>
                     <connections>
                         <outlet property="coinSearchText" destination="XvH-QX-37C" id="XbZ-wN-Mg5"/>
                         <outlet property="tableView" destination="jvN-th-yAV" id="ZaS-wm-QBE"/>
@@ -674,7 +674,10 @@
         <segue reference="1Ya-be-6OB"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="kiwiTransparent" width="500" height="500"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
