@@ -21,7 +21,7 @@ class mainViewController: UIViewController {
     // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Home"
+//        self.navigationItem.title = "Home"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
         

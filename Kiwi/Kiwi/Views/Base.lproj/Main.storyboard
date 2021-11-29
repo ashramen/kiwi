@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19158" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ll-gK-k1d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Ll-gK-k1d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19141"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -356,7 +356,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FQF-mr-AiN"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.59996902939999996" green="0.54770231250000001" blue="0.92422723770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.59996902939999996" green="0.54770231250000001" blue="0.92422723770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CSH-A3-j3F" firstAttribute="top" secondItem="Lgb-vs-uOD" secondAttribute="top" constant="115" id="5RW-yB-29j"/>
                             <constraint firstItem="FQF-mr-AiN" firstAttribute="trailing" secondItem="CSH-A3-j3F" secondAttribute="trailing" constant="146" id="Qhc-JC-aLk"/>
@@ -463,22 +464,21 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2VA-PC-ZJe">
-                                <rect key="frame" x="20" y="112" width="148" height="61"/>
+                                <rect key="frame" x="20" y="112" width="148" height="41"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="a02-o3-4hm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="a02-o3-4hm" firstAttribute="bottom" secondItem="dqs-8h-Un8" secondAttribute="bottom" id="Sh6-XJ-kjP"/>
-                            <constraint firstItem="dqs-8h-Un8" firstAttribute="top" secondItem="2VA-PC-ZJe" secondAttribute="bottom" constant="25" id="XgV-dK-Thz"/>
-                            <constraint firstItem="2VA-PC-ZJe" firstAttribute="top" secondItem="uBR-Sj-BFN" secondAttribute="topMargin" constant="-28" id="Yn5-5z-hph"/>
-                            <constraint firstItem="a02-o3-4hm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2VA-PC-ZJe" secondAttribute="trailing" symbolic="YES" id="hMO-e0-jJI"/>
-                            <constraint firstItem="dqs-8h-Un8" firstAttribute="leading" secondItem="a02-o3-4hm" secondAttribute="leading" id="js1-cM-p7k"/>
-                            <constraint firstItem="2VA-PC-ZJe" firstAttribute="leading" secondItem="a02-o3-4hm" secondAttribute="leading" constant="20" id="kcH-YV-Yt2"/>
-                            <constraint firstItem="a02-o3-4hm" firstAttribute="trailing" secondItem="dqs-8h-Un8" secondAttribute="trailing" id="wlg-WJ-bZt"/>
+                            <constraint firstItem="2VA-PC-ZJe" firstAttribute="top" secondItem="uBR-Sj-BFN" secondAttribute="top" constant="112" id="0Bk-XW-BFF"/>
+                            <constraint firstItem="dqs-8h-Un8" firstAttribute="bottom" secondItem="a02-o3-4hm" secondAttribute="bottom" id="8Od-Lc-5lg"/>
+                            <constraint firstItem="dqs-8h-Un8" firstAttribute="trailing" secondItem="a02-o3-4hm" secondAttribute="trailing" id="LFN-Xz-0TH"/>
+                            <constraint firstItem="dqs-8h-Un8" firstAttribute="leading" secondItem="a02-o3-4hm" secondAttribute="leading" id="Y57-Ur-ucg"/>
+                            <constraint firstItem="2VA-PC-ZJe" firstAttribute="leading" secondItem="uBR-Sj-BFN" secondAttribute="leadingMargin" id="w25-81-to3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" selectedImage="homekit" catalog="system" id="1R2-Vh-fVT"/>
@@ -601,7 +601,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CPt-je-E8E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.98420232529999996" green="0.95652955770000003" blue="0.42769545320000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XvH-QX-37C" firstAttribute="leading" secondItem="b9s-k5-tFi" secondAttribute="leading" id="1xU-TU-GtR"/>
                             <constraint firstItem="XvH-QX-37C" firstAttribute="leading" secondItem="XbA-7D-Ilb" secondAttribute="leadingMargin" id="CGX-Ia-x3y"/>
