@@ -8,8 +8,9 @@ Features:
 - User registration/authentication
 - Simple, intuitive UI that displays info about cryptocurrencies
 - Displays popular cryptocurrencies by trade volume 
-- Add favorite crypto to a watchlist 
-- Share crypto watchlist with friends and friend other users to view their watchlist
+- Add/delete favorite crypto to a watchlist 
+- Add/remove friends
+- View watchlist of friends
 - Error handling/user feedback on all features 
 
 Link to Live Demo Video: link here
