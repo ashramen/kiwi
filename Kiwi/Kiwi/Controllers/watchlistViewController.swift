@@ -113,10 +113,11 @@ class watchlistViewController: UIViewController {
             if self.coinMap[coinName]?.priceUsd != nil && coinNameList.contains(coinName) == false {
                 print(coinName, self.coinMap[coinName]?.priceUsd ?? 0.0)
                 if coinName != ""{
-                    db.collection("favCrypto").document(coinName).setData([
+                    self.db.collection("favCrypto").addDocument(data: [
                         "email": userEmail,
                         "coin": coinName,
-                        "date": Date().timeIntervalSince1970])
+                        "date": Date().timeIntervalSince1970
+                    ])
                 } }
             else if coinNameList.contains(coinName) == true {
                 let alertController = UIAlertController(title: "Alert", message: "You have already saved this cryptocurrency!", preferredStyle: .alert)
@@ -174,12 +175,16 @@ extension watchlistViewController: UITableViewDataSource {
         if editingStyle == .delete {
             let coinDelete = self.coins[indexPath.row].name
             self.coins.remove(at: indexPath.row)
-            db.collection("favCrypto").document(coinDelete).delete() { err in
-                if let err = err {
-                    print("Error removing document: \(err)")
-                } else {
-                    print("Document successfully removed!")
+            
+            let userEmail = Auth.auth().currentUser?.email
+            db.collection("favCrypto").whereField("email", isEqualTo: userEmail!).whereField("coin", isEqualTo:coinDelete).getDocuments() { (querySnapshot, err) in
+              if let err = err {
+                print("Error getting documents: \(err)")
+              } else {
+                for document in querySnapshot!.documents {
+                  document.reference.delete()
                 }
+              }
             }
 
             tableView.reloadData()
