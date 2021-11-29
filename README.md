@@ -13,4 +13,4 @@ Features:
 - View watchlist of friends
 - Error handling/user feedback on all features 
 
-Link to Live Demo Video: https://youtu.be/3Uf0DLomd2A
+Demo video: https://youtu.be/3Uf0DLomd2A
