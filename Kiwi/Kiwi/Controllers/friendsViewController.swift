@@ -21,6 +21,7 @@ class friendsViewController: UIViewController {
         title = "Friends"
         self.tabBarController?.navigationItem.hidesBackButton = true
         cardTableView.dataSource = self
+        friendEmail.layer.cornerRadius = 15.0
         loadUI()
     }
     

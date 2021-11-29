@@ -28,7 +28,6 @@
 		3FF4F93B274B00B500FDA13C /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F93A274B00B500FDA13C /* mainViewController.swift */; };
 		3FF4F93D274B075200FDA13C /* friendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F93C274B075200FDA13C /* friendsViewController.swift */; };
 		3FF4F942274B1B6900FDA13C /* coinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF4F940274B1B6900FDA13C /* coinTableViewCell.swift */; };
-		3FF4F943274B1B6900FDA13C /* coinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */; };
 		88912B58FA322DD23250A9FF /* Pods_Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EDECF13E3D4CB46E71E6DDD /* Pods_Kiwi.framework */; };
 		C3306AF12753464200304B2B /* CoinIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3306AF02753464200304B2B /* CoinIcons.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +57,6 @@
 		3FF4F93A274B00B500FDA13C /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 		3FF4F93C274B075200FDA13C /* friendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsViewController.swift; sourceTree = "<group>"; };
 		3FF4F940274B1B6900FDA13C /* coinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coinTableViewCell.swift; sourceTree = "<group>"; };
-		3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = coinTableViewCell.xib; sourceTree = "<group>"; };
 		47156288DC5E22524F7EA5DA /* Pods-Kiwi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.debug.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.debug.xcconfig"; sourceTree = "<group>"; };
 		48C38A44520A59C42F141E4D /* Pods-Kiwi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kiwi.release.xcconfig"; path = "Target Support Files/Pods-Kiwi/Pods-Kiwi.release.xcconfig"; sourceTree = "<group>"; };
 		C3306AF02753464200304B2B /* CoinIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinIcons.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				C3306AF02753464200304B2B /* CoinIcons.swift */,
 				3FB3DD122746F32500A49794 /* CoinAPI.swift */,
 				3FF4F940274B1B6900FDA13C /* coinTableViewCell.swift */,
-				3FF4F941274B1B6900FDA13C /* coinTableViewCell.xib */,
 				3F220FBA27542D0F005CE8F6 /* Friend.swift */,
 				3F220FBC27542ED1005CE8F6 /* friendTableViewCell.swift */,
 			);
@@ -232,7 +229,6 @@
 				3F6822AB27446FE500912384 /* GoogleService-Info.plist in Resources */,
 				3FBC873A27443F1B006BB059 /* Assets.xcassets in Resources */,
 				3FBC873827443F16006BB059 /* Main.storyboard in Resources */,
-				3FF4F943274B1B6900FDA13C /* coinTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

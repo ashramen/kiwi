@@ -9,7 +9,7 @@ import Foundation
 
 struct CoinAPI {
     let baseURL = "https://rest.coinapi.io/v1/"
-    let apiKey = "76642117-ABBF-4C53-BFD4-992A337244B8"
+    let apiKey = "9EA6DEE8-F757-4D94-B53F-BB070F8CF92C"
     
     /*Old API Keys
       "9FE3C84A-D2D6-4BB4-AD20-0E230B76799A"

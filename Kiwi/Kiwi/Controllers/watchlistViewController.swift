@@ -12,9 +12,9 @@ import Firebase
 class watchlistViewController: UIViewController {
     @IBOutlet weak var coinSearchText: UITextField!
     @IBOutlet weak var tableView: UITableView!
-
+    
     let db = Firestore.firestore()
-    let cellIdentifier = "coinIdentifier"
+    let cellIdentifier = "watchlistCell"
     let coinAPI = CoinAPI()
 
     var coins: [Coin] = []
@@ -28,10 +28,11 @@ class watchlistViewController: UIViewController {
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Watchlist"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
-        tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
+        
+        coinSearchText.layer.cornerRadius = 15.0
+        
         loadUI()
     }
 
@@ -156,14 +157,14 @@ extension watchlistViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "coinCell", for: indexPath) as! coinTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "watchlistCell", for: indexPath) as! coinTableViewCell
         cell.coinName.text = coins[indexPath.row].name_full
         cell.coinSymbol.text = coins[indexPath.row].name
         let price = Double(coins[indexPath.row].rate)
         cell.coinPrice.text = "$" + String(format: "%.3f", price!)
 
         let coinIcon: UIImage = imageMap[coins[indexPath.row].name] ?? UIImage(named: "Logo")!
-        
+        cell.configure()
         cell.coinImage.image = coinIcon
         return cell
     }

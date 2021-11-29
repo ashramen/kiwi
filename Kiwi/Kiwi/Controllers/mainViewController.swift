@@ -24,7 +24,6 @@ class mainViewController: UIViewController {
         self.navigationItem.title = "Home"
         tableView.dataSource = self
         self.tabBarController?.navigationItem.hidesBackButton = true
-        tableView.register(UINib(nibName: "coinTableViewCell", bundle: nil), forCellReuseIdentifier: "coinCell")
         
         // MARK: - Completion Handler for Coin Info
         // Load all the coins from the API and Define in AllCoins
