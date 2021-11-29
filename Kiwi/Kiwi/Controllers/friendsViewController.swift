@@ -120,7 +120,7 @@ extension friendsViewController: UITableViewDataSource {
         let favoriteCoins = friends[indexPath.row].favCoins
         let favoriteCoinsString = favoriteCoins.joined(separator: ", ")
         
-        cell.friendCoins.text = favoriteCoinsString
+        cell.friendCoins.text = "Watchlist coins: " + favoriteCoinsString
         if (cell.friendCoins.text == ""){
             cell.friendCoins.text = "\(friends[indexPath.row].nickname)'s watchlist is empty!"
         }

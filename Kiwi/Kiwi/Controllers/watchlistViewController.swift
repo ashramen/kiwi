@@ -141,6 +141,7 @@ class watchlistViewController: UIViewController {
         }
 
         coinSearchText.text = ""
+        loadUI()
     }
 
 
