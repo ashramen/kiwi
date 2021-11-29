@@ -30,6 +30,15 @@ class registerViewController: UIViewController {
                 
                 if let err = error {
                     print(err.localizedDescription)
+                    let alertController = UIAlertController(title: "Alert", message: err.localizedDescription, preferredStyle: .alert)
+                    let OKAction = UIAlertAction(title: "OK", style: .default) {
+                        (action: UIAlertAction!) in
+                        // Code in this block will trigger when OK button tapped.
+                        print("Ok button tapped");
+                    }
+                    alertController.addAction(OKAction)
+                    self.present(alertController, animated: true, completion: nil)
+                    
                 } else {
                     self.performSegue(withIdentifier: "registerToHome", sender: self)
                 }
