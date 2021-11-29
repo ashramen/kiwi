@@ -128,5 +128,25 @@ extension friendsViewController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let friendDel = self.friends[indexPath.row].email
+            self.friends.remove(at: indexPath.row)
+            let userEmail = Auth.auth().currentUser?.email
+            db.collection("friends").whereField("friendEmail", isEqualTo: friendDel).whereField("email", isEqualTo: userEmail!).getDocuments() { (querySnapshot, err) in
+              if let err = err {
+                print("Error getting documents: \(err)")
+              } else {
+                for document in querySnapshot!.documents {
+                  document.reference.delete()
+                }
+              }
+            }
+
+            cardTableView.reloadData()
+
+        }
+    }
+    
     
 }
