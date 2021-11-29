@@ -21,7 +21,10 @@ class watchlistViewController: UIViewController {
 
     var allCoins: CoinAssets = []
     var coinMap: [String: CoinAsset] = [:]
-
+    var allIcons: CoinIcons = []
+    var urlMap: [String: String] = [:]
+    var imageMap: [String: UIImage] = [:]
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +72,32 @@ class watchlistViewController: UIViewController {
                     }
                 }
             }
+            self.coinAPI.getCoinAssetIcons() { [self] (CoinIcons) in
+                
+                // Create the url Map
+                self.allIcons = CoinIcons
+                for icon in self.allIcons {
+                    self.urlMap[icon.assetID] = icon.url
+                }
+                
+                for coin in self.coins {
+                    let assetID = coin.name
+                    let url = URL(string: urlMap[assetID] ?? "https://i.imgur.com/66HX61V.png")
+                    let data = try? Data(contentsOf: url!)
+                    
+                    if let imageData = data {
+                        let image = UIImage(data: imageData)
+                        self.imageMap[assetID] = image
+                    }
+                }
+
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            
         }
+
     }
 
     // MARK: - SearchBtn
@@ -133,6 +161,9 @@ extension watchlistViewController: UITableViewDataSource {
         let price = Double(coins[indexPath.row].rate)
         cell.coinPrice.text = "$" + String(format: "%.3f", price!)
 
+        let coinIcon: UIImage = imageMap[coins[indexPath.row].name] ?? UIImage(named: "Logo")!
+        
+        cell.coinImage.image = coinIcon
         return cell
     }
 

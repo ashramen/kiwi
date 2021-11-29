@@ -53,30 +53,14 @@ class mainViewController: UIViewController {
                 for coin in popCoins {
                     let assetID = coin.assetID
                     let url = URL(string: urlMap[assetID] ?? "https://i.imgur.com/66HX61V.png")
-//                    print(url ?? "")
                     let data = try? Data(contentsOf: url!)
                     
                     if let imageData = data {
                         let image = UIImage(data: imageData)
                         self.imageMap[assetID] = image
                     }
-                    
-                    
-                    // Create the ImageMap
-                    //let imageURL = URL(String: urlMap[icon.assetID]!)
-                    /*
-                     DispatchQueue.global().async {
-                     guard let imageData = try? Data(contentsOf: imageURL) else { return }
-                     image = UIImage(data: imageData ?? UIImage(named: "Logo"))
-                     }*/
-                    
-                    
-                    
                 }
-                /* Test print URL
-                 print(popCoins[0])
-                 print(urlMap[popCoins[0].assetID] ?? "www.google.com")*/
-                
+
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
