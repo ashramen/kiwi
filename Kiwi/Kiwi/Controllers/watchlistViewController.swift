@@ -131,7 +131,7 @@ extension watchlistViewController: UITableViewDataSource {
         cell.coinName.text = coins[indexPath.row].name_full
         cell.coinSymbol.text = coins[indexPath.row].name
         let price = Double(coins[indexPath.row].rate)
-        cell.coinPrice.text = String(format: "%.3f", price!)
+        cell.coinPrice.text = "$" + String(format: "%.3f", price!)
 
         return cell
     }

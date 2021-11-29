@@ -12,6 +12,7 @@ class coinTableViewCell: UITableViewCell {
     @IBOutlet weak var coinName: UILabel!
     @IBOutlet weak var coinSymbol: UILabel!
     @IBOutlet weak var coinPrice: UILabel!
+    @IBOutlet weak var coinView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,6 +23,15 @@ class coinTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func configure() {
+        coinView.layer.shadowColor = UIColor.gray.cgColor
+        coinView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        coinView.layer.shadowOpacity = 1.0
+        coinView.layer.masksToBounds = false
+        coinView.layer.cornerRadius = 10.0
+
     }
     
 }

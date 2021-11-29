@@ -53,7 +53,7 @@ class mainViewController: UIViewController {
                 for coin in popCoins {
                     let assetID = coin.assetID
                     let url = URL(string: urlMap[assetID] ?? "https://i.imgur.com/66HX61V.png")
-                    print(url ?? "")
+//                    print(url ?? "")
                     let data = try? Data(contentsOf: url!)
                     
                     if let imageData = data {
@@ -99,8 +99,9 @@ extension mainViewController: UITableViewDataSource {
         
         cell.coinName.text = popCoins[indexPath.row].name
         cell.coinSymbol.text = popCoins[indexPath.row].assetID
-        cell.coinPrice.text = String(format: "%.3f", popCoins[indexPath.row].priceUsd ?? 0)
+        cell.coinPrice.text = "$" + String(format: "%.3f", popCoins[indexPath.row].priceUsd ?? 0)
         cell.coinImage.image = coinIcon
+        cell.configure()
         
         return cell
     }
