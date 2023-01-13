@@ -12,5 +12,3 @@ Features:
 - Add/remove friends
 - View watchlist of friends
 - Error handling/user feedback on all features 
-
-Demo video: https://youtu.be/3Uf0DLomd2A
